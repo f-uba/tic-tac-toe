@@ -1,5 +1,6 @@
-var player = null;
+var player, winner = null;
 var selectedPlayer = document.getElementById('selectedPlayer');
+var selectedWinner = document.getElementById('selectedWinner');
 var squares = document.getElementsByClassName('square');
 
 ChangePlayer('X');
@@ -23,6 +24,13 @@ function ChangePlayer(value){
     selectedPlayer.innerHTML = player;
 }
 
+function ChangeSquareColor(squareOne, squareTwo, squareThree){
+    squareOne.style.background = 
+    squareTwo.style.background = 
+    squareThree.style.background =
+    '#0f0';
+}
+
 function CheckSequence(squareOne, squareTwo, squareThree){
      if (squareOne !== '-' &&
         squareOne.innerHTML === squareTwo.innerHTML &&
@@ -31,11 +39,4 @@ function CheckSequence(squareOne, squareTwo, squareThree){
         }
 
         return false;
-}
-
-function ChangeSquareColor(squareOne, squareTwo, squareThree){
-    squareOne.style.color = 
-    squareTwo.style.color = 
-    squareThree.style.color =
-    '#0f0';
 }
