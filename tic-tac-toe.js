@@ -5,6 +5,8 @@ var selectedWinner = document.getElementById('selectedWinner');
 SetPlayer('X');
 
 function SelectSquare(id){
+    if (winner !== null) return;
+
     var square = document.getElementById(id);
 
     if (square.innerHTML !== '-') return;
