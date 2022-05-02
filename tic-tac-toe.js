@@ -22,3 +22,20 @@ function ChangePlayer(value){
     player = value;
     selectedPlayer.innerHTML = player;
 }
+
+function CheckSequence(squareOne, squareTwo, squareThree){
+     if (squareOne !== '-' &&
+        squareOne.innerHTML === squareTwo.innerHTML &&
+        squareTwo.innerHTML === squareThree) { 
+            return true;
+        }
+
+        return false;
+}
+
+function ChangeSquareColor(squareOne, squareTwo, squareThree){
+    squareOne.style.color = 
+    squareTwo.style.color = 
+    squareThree.style.color =
+    '#0f0';
+}
