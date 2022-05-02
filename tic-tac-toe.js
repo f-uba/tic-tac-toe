@@ -1,9 +1,8 @@
 var player, winner = null;
 var selectedPlayer = document.getElementById('selectedPlayer');
 var selectedWinner = document.getElementById('selectedWinner');
-var squares = document.getElementsByClassName('square');
 
-ChangePlayer('X');
+SetPlayer('X');
 
 function SelectSquare(id){
     var square = document.getElementById(id);
@@ -16,10 +15,11 @@ function SelectSquare(id){
     if (player === 'X') player = 'O';
     else player = 'X';
 
-    ChangePlayer(player);
+    SetPlayer(player);
+    GameOver();
 }
 
-function ChangePlayer(value){
+function SetPlayer(value){
     player = value;
     selectedPlayer.innerHTML = player;
 }
@@ -32,9 +32,9 @@ function ChangeSquareColor(squareOne, squareTwo, squareThree){
 }
 
 function CheckSequence(squareOne, squareTwo, squareThree){
-     if (squareOne !== '-' &&
+     if (squareOne.innerHTML !== '-' &&
         squareOne.innerHTML === squareTwo.innerHTML &&
-        squareTwo.innerHTML === squareThree) { 
+        squareTwo.innerHTML === squareThree.innerHTML) { 
             return true;
         }
 
